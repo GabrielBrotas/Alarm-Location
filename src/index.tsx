@@ -13,9 +13,8 @@ function AlarmLocation() {
     
     const {metersRange, distanceBetweenPoints, setMetersRange, timeToReachPoint} = useContext(MapContext)
     
-    const [music, setMusic] = useState(require('./musics/birds.mp3'))
+    const [music, setMusic] = useState(require('./assets/musics/birds.mp3'))
     const [isPlayingMusic, setIsPlayingMusic] = useState<boolean>(false)
-
 
     useEffect( () => {
 
