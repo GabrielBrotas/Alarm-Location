@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {View, Text, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Platform} from 'react-native';
 import { MapContext } from './mapContext';
 import {Feather} from '@expo/vector-icons'
@@ -10,6 +10,12 @@ import Dropdown from './components/Dropdown';
 function AlarmLocation() {
     
     const {metersRange, distanceBetweenPoints, setMetersRange, timeToReachPoint} = useContext(MapContext)
+
+    useEffect( () => {
+        if(metersRange >= distanceBetweenPoints) {
+            console.log('despertar')
+        } 
+    }, [])
 
     return (
         <KeyboardAvoidingView 

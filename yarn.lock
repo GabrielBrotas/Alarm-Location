@@ -2528,7 +2528,7 @@ expo-location@~10.0.0:
   resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-10.0.0.tgz#2923411649434f2f079343b163b13c5c9eee8b2d"
   integrity sha512-QLEb0iaBv4/blLxxfKRj2/HPisY+1t+g6MgegqZ1j1U/0qih4dvzUQrxie9ZOZyQB9gnXFCRnZv3QzHEb52dcA==
 
-expo-permissions@~10.0.0:
+expo-permissions@^10.0.0, expo-permissions@~10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-10.0.0.tgz#5b31c54d561d00c7e46cd02321bc3704c51c584b"
   integrity sha512-b6oitd4JmFdQ7DxczZ2WRS9aDyqgVM7lEhy3JyKZ2dbU19C6NyHyLCcwssZgfzOfGnp2owoaWn3KU4zdrF5MIA==
@@ -2550,6 +2550,13 @@ expo-status-bar@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.0.3.tgz#62b4d6145680abd43ba6ecfa465f835e88bf6263"
   integrity sha512-/Orgla1nkIrfswNHbuAOTbPVq0g3+GrhoQVk7MRafY2dwrFLgXhaPExS+eN2hpmzqPv2LG5cqAZDCQUAjmZYBQ==
+
+expo-task-manager@^8.6.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/expo-task-manager/-/expo-task-manager-8.6.0.tgz#615f57904f37d0beb024f513c715a0cdc6a2b50a"
+  integrity sha512-iyspQYN97KNxTgR7MEuqALxYQgefC9f/wacrZmtDKiXfJYBhcFeFjQiUMih/UZqJSfeIrp1zX3xrGSrM0Gub/w==
+  dependencies:
+    unimodules-app-loader "~1.4.0"
 
 expo@~40.0.0:
   version "40.0.0"

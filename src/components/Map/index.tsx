@@ -2,7 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Circle, MapEvent  } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
-import { getCurrentPositionAsync, requestPermissionsAsync } from 'expo-location';
+// import { getCurrentPositionAsync, requestPermissionsAsync, LocationCallback } from 'expo-location';
+import * as Location from 'expo-location';
+import * as TaskManager from 'expo-task-manager'
+import * as Permissions from 'expo-permissions'
+
 import { MapContext } from '../../mapContext';
 import {FontAwesome} from '@expo/vector-icons'
 import {GOOGLE_API_KEY} from '../../../variables'
@@ -14,9 +18,24 @@ interface OnReadyProps {
   distance: number;
 }
 
+TaskManager.defineTask('get-location', ({ data, error }) => {
+  if (error) {
+    // Error occurred - check `error.message` for more details.
+    console.log(error)
+    return;
+  }
+  if (data) {
+    // const { locations } = data;
+    console.log(data)
+    // do something with the locations captured in the background
+  }
+});
+
 function Map() {
 
   const {setDistanceBetweenPoints, metersRange, setTimeToReachPoint, transport} = useContext(MapContext)
+
+  const [permissions, askPermission] = Permissions.usePermissions("location", {get: true})
 
   const [currentLatitude, setCurrentLatitude] = useState<number | null>()
   const [currentLongitude, setCurrentLongitude] = useState<number | null>()
@@ -25,19 +44,53 @@ function Map() {
   const [destinyLongitude, setDestinyLongitude] = useState<number | null>()
 
   useEffect( () => {
+    // async function loadInitialPosition() {
+    //   const {granted} = await requestPermissionsAsync();
 
-    async function loadInitialPosition() {
-      const {granted} = await requestPermissionsAsync();
-
-      if(granted) {
-        const {coords} = await getCurrentPositionAsync()
-        const {latitude, longitude} = coords
-        setCurrentLatitude(latitude)
-        setCurrentLongitude(longitude)
-      }
+    //   if(granted) {
+    //     const {coords} = await getCurrentPositionAsync()
+    //     const {latitude, longitude} = coords
+    //     setCurrentLatitude(latitude)
+    //     setCurrentLongitude(longitude)
+    //   }
+    // }
+    // loadInitialPosition()
+    // Location.requestPermissionsAsync().then( async (res) => {
+    //   if(res.status === "granted") {
+    //     await Location.startLocationUpdatesAsync('get-location', {
+    //       accuracy: Location.Accuracy.Balanced
+    //     })
+    //   }
+    // });
+    // if (status === 'granted') {
+    //   await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
+    //     accuracy: Location.Accuracy.Balanced,
+    //   });
+    // }
+    
+    if (permissions?.status === "granted") {
+      Location.startLocationUpdatesAsync('get-location', {accuracy: 1}).then( res => {
+        console.log(res)
+      }).catch( err => {console.log(err)})
+    } else {
+      askPermission
     }
-    loadInitialPosition()
+
+  }, [permissions])
+
+
+  useEffect( () => {
+
+    TaskManager.defineTask('get-location', ({ data, error }) => {
+      if (error) {
+        // check `error.message` for more details.
+        return;
+      }
+      console.log('Received new locations', data);
+    });
+
   }, [])
+
 
   function handleSelectMapPosition(event: MapEvent) {
     setDestinyLatitude(event.nativeEvent.coordinate.latitude)
