@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://github.com/GabrielBrotas/Alarm-Location/blob/main/src/assets/images/logo.png" align="center" />
 </p>
+
 # Alarm Location
   <img src="https://github.com/GabrielBrotas/Alarm-Location/blob/main/src/assets/images/Untitled.gif" />  
 
