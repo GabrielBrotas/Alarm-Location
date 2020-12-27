@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react';
-import {View, Text, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Platform, ToolbarAndroidBase} from 'react-native';
-import Map from './Map'
+import React, { useContext } from 'react';
+import {View, Text, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Platform} from 'react-native';
 import { MapContext } from './mapContext';
 
+import Map from './components/Map'
 import styles from './styles'
+import Dropdown from './components/Dropdown';
 
 function AlarmLocation() {
     
@@ -30,7 +31,7 @@ function AlarmLocation() {
                 </View>
 
                 <View style={styles.rangeInputContent}>
-                    <Text style={styles.rangeInputText}>Metros</Text>
+                    
                     <View style={styles.inputContent}>
                         <TextInput 
                             keyboardType="numeric"
@@ -39,13 +40,22 @@ function AlarmLocation() {
                             onChangeText={(e) => { 
                                 setMetersRange(e)
                             }}
+                            placeholder="Distancia para despertar"
                         />
                         <View style={styles.rangeMetersContent}>
                             <Text style={styles.rangeMeters}>M</Text>
                         </View>
                     </View>
                     
-                    <Text style={styles.rangeInputSubText}>Distancia para o alarme despertar</Text>
+                    <View style={styles.inputContent}>
+
+                        <Dropdown />
+
+                        <View style={styles.rangeMetersContent}>
+                            <Text style={styles.rangeMeters}>M</Text>
+                        </View>
+                    </View>
+                    
                 </View>
             </View>
         </View>

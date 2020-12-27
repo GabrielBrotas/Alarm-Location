@@ -42,16 +42,12 @@ const styles = StyleSheet.create({
     rangeInputContent: {
         flex: 3
     },
-    rangeInputText: {
-        color: "#fff",
-        fontSize: 15,
-        marginBottom: 5
-    },
     inputContent: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 5
     },
     rangeInput: {
         height: 50,
@@ -59,7 +55,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderTopLeftRadius: 5,
         borderBottomLeftRadius: 5,
-        padding: 10
+        padding: 10,
+        color: "#747D88" 
     },
     rangeMetersContent: {
         height: 50,
@@ -76,10 +73,6 @@ const styles = StyleSheet.create({
     rangeMeters: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: "#CBCFD4"
-    },
-    rangeInputSubText: {
-        marginTop: 5,
         color: "#CBCFD4"
     }
 })
