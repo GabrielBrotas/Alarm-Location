@@ -3,7 +3,6 @@ import { View, ActivityIndicator } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Circle, MapEvent  } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 
-// import { getCurrentPositionAsync, requestPermissionsAsync, LocationCallback } from 'expo-location';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions'
 
@@ -29,35 +28,6 @@ function Map() {
 
   const [destinyLatitude, setDestinyLatitude] = useState<number | null>()
   const [destinyLongitude, setDestinyLongitude] = useState<number | null>()
-
-  useEffect( () => {
-    // async function loadInitialPosition() {
-    //   const {granted} = await requestPermissionsAsync();
-
-    //   if(granted) {
-    //     const {coords} = await getCurrentPositionAsync()
-    //     const {latitude, longitude} = coords
-    //     setCurrentLatitude(latitude)
-    //     setCurrentLongitude(longitude)
-    //   }
-    // }
-    // loadInitialPosition()
-    // Location.requestPermissionsAsync().then( async (res) => {
-    //   if(res.status === "granted") {
-    //     console.log('granted')
-    //     await Location.startLocationUpdatesAsync('get-location', {
-    //       accuracy: Location.Accuracy.Balanced
-    //     })
-    //   }
-      
-    // });
-    // if (status === 'granted') {
-    //   await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
-    //     accuracy: Location.Accuracy.Balanced,
-    //   });
-    // }
-    
-  }, [])
 
   if (permissions?.status === "granted") {
     Location.watchPositionAsync({
@@ -123,7 +93,7 @@ function Map() {
             latitude: destinyLatitude,
             longitude: destinyLongitude
           }} 
-          fillColor="rgba(161, 84, 242, 0.4)"
+          fillColor="rgba(161, 84, 242, 0.3)"
           radius={metersRange ? parseInt(metersRange) : 0}
           strokeColor="#3C444C"
           />
