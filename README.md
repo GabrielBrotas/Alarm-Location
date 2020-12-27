@@ -1,7 +1,7 @@
-<img source="https://github.com/GabrielBrotas/Alarm-Location/blob/main/src/assets/images/logo.png" width="200px" height="200px" />
+<img src="https://github.com/GabrielBrotas/Alarm-Location/blob/main/src/assets/images/logo.png"  />
 
-# alarm-location
-  <img source="https://github.com/GabrielBrotas/Alarm-Location/blob/main/src/assets/images/Untitled.gif" width="700px" height="500px"/>  
+# Alarm Location
+  <img src="https://github.com/GabrielBrotas/Alarm-Location/blob/main/src/assets/images/Untitled.gif" />  
 
 
 ## 🚀 Tecnologias
