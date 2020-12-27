@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import {View, Text, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Platform} from 'react-native';
 import { MapContext } from './mapContext';
+import {Feather} from '@expo/vector-icons'
 
 import Map from './components/Map'
 import styles from './styles'
@@ -25,11 +26,14 @@ function AlarmLocation() {
             <Map />
 
             <View style={styles.footer}>
+
+                <Text style={styles.rangeInfo}>Info</Text>
                 <View style={styles.rangeTextContent}>
                     <Text style={styles.rangeText}>{distanceBetweenPoints}  Metros</Text>
                     <Text style={styles.rangeText}>{timeToReachPoint}  Minutos</Text>
                 </View>
 
+                <Text style={styles.rangeInfo}>Config</Text>
                 <View style={styles.rangeInputContent}>
                     
                     <View style={styles.inputContent}>
@@ -52,7 +56,7 @@ function AlarmLocation() {
                         <Dropdown />
 
                         <View style={styles.rangeMetersContent}>
-                            <Text style={styles.rangeMeters}>M</Text>
+                            <Feather name="move" size={18} color="#CBCFD4" />
                         </View>
                     </View>
                     

@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native'
 
 const pickerSelectStyles = StyleSheet.create({
     inputIOS: {
-        height: 50,
+        height: 45,
         width: 200,
         backgroundColor: "#fff",
         borderTopLeftRadius: 5,
@@ -11,7 +11,7 @@ const pickerSelectStyles = StyleSheet.create({
         color: "#747D88"
     },
     inputAndroid: {
-        height: 50,
+        height: 45,
         width: 200,
         backgroundColor: "#fff",
         borderTopLeftRadius: 5,

@@ -4,6 +4,7 @@ import MapView, { PROVIDER_GOOGLE, Marker, Circle, MapEvent  } from 'react-nativ
 import MapViewDirections from 'react-native-maps-directions';
 import { getCurrentPositionAsync, requestPermissionsAsync } from 'expo-location';
 import { MapContext } from '../../mapContext';
+import {FontAwesome} from '@expo/vector-icons'
 import {GOOGLE_API_KEY} from '../../../variables'
 
 import styles from './styles'
@@ -15,7 +16,7 @@ interface OnReadyProps {
 
 function Map() {
 
-  const {setDistanceBetweenPoints, metersRange, setTimeToReachPoint} = useContext(MapContext)
+  const {setDistanceBetweenPoints, metersRange, setTimeToReachPoint, transport} = useContext(MapContext)
 
   const [currentLatitude, setCurrentLatitude] = useState<number | null>()
   const [currentLongitude, setCurrentLongitude] = useState<number | null>()
@@ -67,7 +68,9 @@ function Map() {
         coordinate={{
           latitude: currentLatitude,
           longitude: currentLongitude
-        }} />
+        }} >
+          <FontAwesome name='street-view' size={28} color="#F27A54" />
+        </Marker>
 
         {destinyLatitude && destinyLongitude && (
          <>
@@ -75,7 +78,9 @@ function Map() {
           coordinate={{
             latitude: destinyLatitude,
             longitude: destinyLongitude
-          }} />
+          }} >
+            <FontAwesome name='flag' size={28} color="#a154f2" />
+          </Marker>
 
           <Circle 
           center={{
@@ -91,7 +96,7 @@ function Map() {
             origin={{latitude: currentLatitude, longitude: currentLongitude}}
             destination={{latitude: destinyLatitude, longitude: destinyLongitude}}
             apikey={GOOGLE_API_KEY}
-            mode='WALKING'
+            mode={transport}
             strokeWidth={3}
             strokeColor="#A154F2"
             precision="high"

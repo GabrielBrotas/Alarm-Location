@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
     header: {
         width: '100%',
-        height: 70,
+        height: 60,
         
         display: 'flex',
         justifyContent: 'center',
@@ -29,28 +29,38 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#3c444d',
     },
+    rangeInfo: {
+        width: "90%",
+
+        marginTop: 10,
+
+        fontSize: 20,
+        color: "#fff",
+        fontWeight: 'bold',
+    },
     rangeTextContent: {
-        flex: 2,
+        flex: 3,
         display: 'flex',
         alignItems: 'flex-start',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     rangeText: {
         color: "#A154F2",
-        fontSize: 30
+        fontSize: 25
     },
     rangeInputContent: {
-        flex: 3
+        flex: 6,
+        marginTop: 15
     },
     inputContent: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 5
+        marginBottom: 10
     },
     rangeInput: {
-        height: 50,
+        height: 45,
         width: 200,
         backgroundColor: "#fff",
         borderTopLeftRadius: 5,
@@ -59,7 +69,7 @@ const styles = StyleSheet.create({
         color: "#747D88" 
     },
     rangeMetersContent: {
-        height: 50,
+        height: 45,
         width: 50,
         backgroundColor: "#747D88",
         

@@ -16,7 +16,7 @@ function Dropdown() {
             items={[
                 { label: 'ANDANDO', value: 'WALKING' },
                 { label: 'DIRIGINDO', value: 'DRIVING' },
-                { label: 'CICLISMO', value: 'BICYLCING' },
+                { label: 'CICLISMO', value: 'BICYCLING' },
                 { label: 'TRANSITO', value: 'TRANSIT' }
             ]}
         />
