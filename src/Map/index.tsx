@@ -4,6 +4,7 @@ import MapView, { PROVIDER_GOOGLE, Marker, Circle, MapEvent  } from 'react-nativ
 import MapViewDirections from 'react-native-maps-directions';
 import { getCurrentPositionAsync, requestPermissionsAsync } from 'expo-location';
 import { MapContext } from '../mapContext';
+import {GOOGLE_API_KEY} from '../../variables'
 
 import styles from './styles'
 
@@ -89,7 +90,7 @@ function Map() {
           <MapViewDirections 
             origin={{latitude: currentLatitude, longitude: currentLongitude}}
             destination={{latitude: destinyLatitude, longitude: destinyLongitude}}
-            apikey="AIzaSyDRHX955Zwk07BlxqwU_zs1MQ3xx4eF11I"
+            apikey={GOOGLE_API_KEY}
             mode='WALKING'
             strokeWidth={3}
             strokeColor="#A154F2"
