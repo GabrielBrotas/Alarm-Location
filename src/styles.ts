@@ -5,14 +5,16 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 20,
         backgroundColor: '#3c444d',
+
+        display: 'flex'
     },
     header: {
         width: '100%',
-        height: 60,
         
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        flex: 1
     },
     headerText: {
         fontSize: 25,
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
         color: "#A154F2"
     },
     footer: {
-        flex: 1,
+        flex: 5,
         width: '100%',
         display: 'flex',
         alignItems: 'center',
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     rangeTextContent: {
         flex: 3,
         display: 'flex',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'center',
     },
     rangeText: {

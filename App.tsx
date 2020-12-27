@@ -23,7 +23,7 @@ export default function App() {
       setTransport
     }}>
       <AlarmLocation />
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </MapContext.Provider>
   );
 }
